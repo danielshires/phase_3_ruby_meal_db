@@ -77,7 +77,7 @@ end
 RSpec.describe Meals, "#get_meal_details" do
     it "gets the details of the meals given an id" do
         meal = Meals.get_meal_details(52771)
-        expect(meals.length).to eq 1
-        expect(meals[0].strMeal).to eq "Spicy Arrabiata Penne"
+        expect(meal.length).to eq 1
+        expect(meal[0].strMeal)
     end
 end

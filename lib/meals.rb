@@ -3,6 +3,8 @@ require_relative "../config/environment.rb"
 class Meals
     
     SEARCH_API_URL = "https://www.themealdb.com/api/json/v1/1/search.php?s="
+    DETAILS_API_URL = "https://www.themealdb.com/api/json/v1/1/lookup.php?i="
+    CATEGORY_API_URL = "https://themealdb.com/api/json/v1/1/filter.php?c="
     
     def initialize(attributes)
         attributes.each do |key, value|
@@ -13,6 +15,11 @@ class Meals
 
     def self.list_meals_starting_with(alphabet)
         url = SEARCH_API_URL + alphabet
+        make_request_and_parse_response(url)
+    end
+
+    def self.get_meal_details(id)
+        url = DETAILS_API_URL + id.to_s
         make_request_and_parse_response(url)
     end
 
