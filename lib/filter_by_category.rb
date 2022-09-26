@@ -1,9 +1,9 @@
 require_relative "../config/environment.rb"
+require_relative "./meal_categories.rb"
 
 class FilteredCategory
     
-    CATEGORY_API_URL = "https://themealdb.com/api/json/v1/1/filter.php?c="
-    FILTER_API_URL = "https://www.themealdb.com/api/json/v1/1/categories.php"
+    FILTER_API_URL = "https://www.themealdb.com/api/json/v1/1/filter.php?c="
     
     def initialize(attributes)
         attributes.each do |key, value|
@@ -12,16 +12,10 @@ class FilteredCategory
         end
     end        
 
-    def self.list_categories
-        url = CATEGORY_API_URL + category
-        make_request_and_parse_response(category)
-    end
-
     def self.filter_by_category(category)
         url = FILTER_API_URL + category
-        make_request_and_parse_response(category)
+        make_request_and_parse_response(url)
     end
-
 
     private
 
@@ -34,11 +28,10 @@ class FilteredCategory
 
         meals = response_json["meals"].collect do |meal|
             attributes = {
-                idCategory: meal["idCategory"],
-                strCategory: meal["strCategory"],
-                strCategoryDescription: "strCategoryDescription"
+                strMeal: meal["strMeal"],
+                idMeal: meal["idMeal"]
             }
-            Meals.new(attributes)
+            FilteredCategory.new(attributes)
         end
 
     end

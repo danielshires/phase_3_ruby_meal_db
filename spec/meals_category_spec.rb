@@ -16,7 +16,7 @@ RSpec.describe MealCategories, "#initialize" do
 end
 
 RSpec.describe MealCategories, "#list_categories" do 
-    it "fetches a list of meal categories based on an input" do
+    it "fetches a list of meal categories" do
         meals = MealCategories.list_categories
         expect(meals.length).to be > 0
         meals.each do |meal|
