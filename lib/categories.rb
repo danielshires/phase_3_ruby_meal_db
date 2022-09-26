@@ -1,6 +1,6 @@
 require_relative "../config/environment.rb"
 
-class Meals
+class MealCategory
     
     SEARCH_API_URL = "https://www.themealdb.com/api/json/v1/1/search.php?s="
     DETAILS_API_URL = "https://www.themealdb.com/api/json/v1/1/lookup.php?i="
