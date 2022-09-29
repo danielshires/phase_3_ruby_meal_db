@@ -29,7 +29,7 @@ class MealCategories
             attributes = {
                 idCategory: category["idCategory"],
                 strCategory: category["strCategory"],
-                strCategoryDescription: "strCategoryDescription"
+                strCategoryDescription: category["strCategoryDescription"]
             }
             MealCategories.new(attributes)
         end

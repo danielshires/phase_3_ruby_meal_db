@@ -23,6 +23,8 @@ class Meals
         make_request_and_parse_response(url)
     end
 
+
+
     private
 
     def self.make_request_and_parse_response(url)
@@ -82,6 +84,7 @@ class Meals
                 strMeasure19: meal["strMeasure19"],
                 strMeasure20: meal["strMeasure20"],
             }
+            
             Meals.new(attributes)
         end
 
