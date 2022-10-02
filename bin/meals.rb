@@ -115,14 +115,10 @@ loop do
             puts "#{meal.strMeasure20} #{meal.strIngredient20}"      
         end
 
-    # I'm feeling lucky
-    elsif number == "3"
-        puts
-        puts "Number 3"
-        puts
+
     else 
         puts
-        puts "NOTIFICATION: You entered a number that wasn't 1, 2 or 3. Please try again."
+        puts "NOTIFICATION: You entered a number that wasn't 1 or 2. Please try again."
         puts
     end
 
