@@ -11,7 +11,6 @@ loop do
     puts
     puts "1: Search by alphabet"
     puts "2: Search by category"
-    puts "3: I'm feeling lucky"
     puts
     number = gets.chomp
     if number == "/"
